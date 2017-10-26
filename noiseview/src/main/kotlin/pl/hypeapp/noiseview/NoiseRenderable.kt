@@ -2,6 +2,7 @@ package pl.hypeapp.noiseview
 
 import android.graphics.*
 
+@Suppress("MemberVisibilityCanPrivate")
 internal class NoiseRenderable(var bitmap: Bitmap?,
                                var grainFps: Int,
                                var scale: Float,
