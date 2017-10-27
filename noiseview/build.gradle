@@ -38,6 +38,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        renderscriptTargetApi rootProject.ext.minSdkVersion
+        renderscriptSupportModeEnabled true
     }
     buildTypes {
         release {
@@ -53,7 +55,6 @@ android {
     lintOptions {
         abortOnError false
     }
-    buildToolsVersion '26.0.2'
 }
 
 dependencies {
