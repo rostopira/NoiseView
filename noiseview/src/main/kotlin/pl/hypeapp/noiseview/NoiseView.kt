@@ -14,11 +14,11 @@ class NoiseView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : Ima
 
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
 
-    private val renderables: ArrayList<NoiseRenderable> = arrayListOf()
+    private val renderables: ArrayList<RasterNoise> = arrayListOf()
 
-    private lateinit var noiseScratchEffect: NoiseRenderable
+    private lateinit var noiseScratchEffect: RasterNoise
 
-    private lateinit var noise: NoiseRenderable
+    private lateinit var noise: RasterNoise
 
     private var isRenderableAlreadyInit: Boolean = false
 
@@ -96,9 +96,9 @@ class NoiseView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : Ima
         setLayerType(View.LAYER_TYPE_HARDWARE, null)
         val noiseScratch = BitmapFactory.decodeResource(resources, R.drawable.noise_scratch)
         val noiseReg = BitmapFactory.decodeResource(resources, R.drawable.noise)
-        noiseScratchEffect = NoiseRenderable(noiseScratch, grainFps, noiseScale, noiseIntensity)
+        noiseScratchEffect = RasterNoise(noiseScratch, grainFps, noiseScale, noiseIntensity)
         renderables.add(noiseScratchEffect)
-        noise = NoiseRenderable(noiseReg, grainFps, noiseScale, noiseIntensity)
+        noise = RasterNoise(noiseReg, grainFps, noiseScale, noiseIntensity)
         renderables.add(noise)
     }
 
